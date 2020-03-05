@@ -7,14 +7,13 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+ <ion-button (click)="load()">Aprieta</ion-button>
+ <div *ngIf="mostrar" >
+  <ion-item *ngFor="let item of this.mia.results" >
+    <ion-label>{{item.gender}}</ion-label>
+    <ion-label>{{item.name.title}}</ion-label>
+    <ion-label>{{item.name.first}}</ion-label>
+    <ion-label>{{item.name.last}}</ion-label>
+  </ion-item>
+ </div>
 </ion-content>
